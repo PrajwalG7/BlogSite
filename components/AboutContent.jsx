@@ -23,13 +23,13 @@ export default function AboutContent() {
               10th std with average grades but enjoyed every moment of it. Right
               after that opted for Computer Science and Engineering, that
               decision somehow changed my life. While struggling with math,
-              physics, chemistry in initial days of my college semester, one
-              great thing happend from that was I became focused and consistent
-              with my work. Defining your own success is the best thing you can
-              do for yourself. Later on I started with programming which was
+              physics, chemistry in the initial days of my college semester, one
+              great thing happen that was I became focused and consistent with
+              my work. Defining your own success is the best thing you can do
+              for yourself. Later on, I started with programming which was a
               building block for my imagination and thinking, being able to
-              create what I imagine is one of the best thing happened to me,
-              since then I kept on improving myself.
+              create what I imagine is one of the best things that happened to
+              me since then I kept on improving myself.
             </h2>
             <h2 className="font-medium">
               {" "}
@@ -45,6 +45,7 @@ export default function AboutContent() {
                 href="https://github.com/PrajwalG7"
                 target="_blank"
                 className="hover:text-blue-800 hover:font-medium "
+                rel="noopener noreferrer"
               >
                 {" "}
                 <svg
@@ -63,6 +64,7 @@ export default function AboutContent() {
                 href="https://twitter.com/iprajwalG"
                 target="_blank"
                 className="hover:text-blue-800 hover:font-medium"
+                rel="noopener noreferrer"
               >
                 {" "}
                 <svg
@@ -97,6 +99,7 @@ export default function AboutContent() {
                 href=" https://www.instagram.com/1prajwalgaikwad/"
                 target="_blank"
                 className="hover:text-blue-800 hover:font-medium"
+                rel="noopener noreferrer"
               >
                 {" "}
                 <svg
@@ -126,6 +129,7 @@ export default function AboutContent() {
                 href="https://hashnode.com/@PrajwalG"
                 target="_blank"
                 className="hover:text-blue-800 hover:font-medium"
+                rel="noopener noreferrer"
               >
                 <svg
                   className="inline-block w-6 h-6"
