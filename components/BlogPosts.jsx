@@ -55,7 +55,7 @@ export default function BlogPost(posts) {
                   <a
                     href={`https://prajwalg.hashnode.dev/${blogs.slug}`}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noreferrer"
                   >
                     {blogs.brief}{" "}
                     <h2 className="hover:text-blue-800 inline-block ml-2 text-gray-800">
