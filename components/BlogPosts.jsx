@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function BlogPost(posts) {
   let blogs = posts.articles.posts;
 
@@ -13,10 +15,10 @@ export default function BlogPost(posts) {
     <>
       <div className="flex md:flex-row  sm:flex-col   md:gap-2 ml-2 mr-2  flex-wrap pb-10  ">
         {/* card*/}
-        {blogs.map((blogs, index) => {
+        {blogs.map((blogs) => {
           return (
             <div
-              key={index}
+              key={blogs._id}
               className="container  max-w-md  rounded   border-slate-600 flex justify-start bg-gray-50 mt-8   border-4    ml-auto mr-auto "
             >
               <div className="flex flex-col flex-grow border border-slate-100  ">
@@ -31,7 +33,6 @@ export default function BlogPost(posts) {
                     ></img>
                   </div>
                 </div>
-
                 {/* <!-- title section --> */}
                 <div>
                   <div className="ml-2 mt-2">
@@ -49,7 +50,6 @@ export default function BlogPost(posts) {
                     </h2>
                   </div>
                 </div>
-
                 {/* <!--brief --> */}
                 <div className="text-gray-500 ml-2  cursor-pointer  mr-2  ">
                   <a
@@ -57,11 +57,16 @@ export default function BlogPost(posts) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {blogs.brief}{" "}
-                    <h2 className="hover:text-blue-800 inline-block ml-2 text-gray-800">
-                      Read More
+                    {blogs.brief} <br />
+                    <h2 className="hover:text-blue-800 inline-block text-gray-800  font-medium  after:content-['_↗']">
+                      Read it on Hashnode
                     </h2>
                   </a>
+                  <Link href={`/posts/${blogs.slug}`} passHref>
+                    <h2 className="text-gray-800 hover:text-blue-800   cursor-pointer  font-medium  after:content-['_↗']">
+                      Read it on BlogSite
+                    </h2>
+                  </Link>
                 </div>
 
                 {/* <!-- divider line--> */}

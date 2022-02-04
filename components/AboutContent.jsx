@@ -3,10 +3,13 @@ export default function AboutContent() {
     <>
       <div className="grid lg:grid-cols-4 ml-auto lg:space-x-16 mr-auto mt-20 sm:grid-cols-1  mb-5 p-10">
         <div className="sm:ml-auto sm:mr-auto">
-          <img src="/images/AboutImage.jpg" className="rounded sm:w-screen " />
+          <img
+            src="/images/AboutImage.jpg"
+            className="rounded sm:w-screen shadow-xl shadow-gray-700"
+          />
         </div>
         <div className="">
-          <h2 className="font-semibold sm:mt-4 lg:mt-0  text-lg">About Me</h2>
+          <h2 className="font-semibold sm:mt-6 lg:mt-0  text-lg ">About Me</h2>
           <div className="mt-4  ">
             Myself Prajwal Gaikwad, I am a CS and Engineering Student, Tech
             Blogger and a Full Stack Developer from India. Jumping straight to

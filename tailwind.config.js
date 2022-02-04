@@ -3,12 +3,16 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   content: ["./pages/*.jsx", "./components/*.jsx"],
   theme: {
-    extend: {},
+    extend: {
+      margin: {
+        "70px": "70px",
+      },
+    },
     screens: {
       ...defaultTheme.screens,
       sm: "51px",
-      md: "917px",
-      lg: "766px",
+      md: "766px",
+      lg: "917px",
     },
   },
   plugins: [],

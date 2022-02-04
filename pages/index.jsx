@@ -18,7 +18,7 @@ export async function getStaticProps() {
 
     body: JSON.stringify({
       query:
-        'query {user(username: "prajwalg") {publication {posts(page: 0) {title brief slug coverImage dateAdded}}}}',
+        'query {user(username: "prajwalg") {publication {posts(page: 0) {title brief slug coverImage dateAdded _id}}}}',
     }),
   });
 

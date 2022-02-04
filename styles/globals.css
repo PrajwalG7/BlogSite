@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@screen sm {
+  .style-Title {
+    @apply m-auto
+        p-5
+        mt-2
+        text-3xl;
+  }
+  .post-Image {
+    @apply shadow-xl shadow-gray-800;
+  }
+}
+
+@screen md {
+  .style-Title {
+    @apply m-auto
+        p-5
+        mt-4
+        text-4xl;
+  }
+
+  .style-Markdown {
+    @apply m-auto
+          pl-20
+          pr-20
+          max-w-6xl;
+  }
+}
+
+/* @screen md {
+  .style-Markdown {
+    @apply m-auto
+          pl-20
+          pr-20
+          max-w-6xl;
+  }
+} */
