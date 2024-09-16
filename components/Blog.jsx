@@ -2,7 +2,7 @@ import BlogPost from "./BlogPosts";
 import Hero from "./Hero";
 
 export default function Blog(res) {
-  let posts = res.articles.data.user.publication;
+  let posts = res.articles.data.publication;
   return (
     <>
       <Hero />

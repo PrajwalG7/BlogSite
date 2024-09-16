@@ -6,7 +6,7 @@ export default function Post(post) {
       <div className="p-10 mt-20">
         <div className="mb-10 ">
           <img
-            src={post.res.data.post.coverImage}
+            src={post.res.data.publication.post.coverImage.url}
             alt="profile-image"
             width={1000}
             height={600}
@@ -16,14 +16,14 @@ export default function Post(post) {
 
         <div>
           <div className="text-center font-bold  style-Title ">
-            {post.res.data.post.title}
+            {post.res.data.publication.post.title}
           </div>
         </div>
 
         <div
           className="style-Markdown"
           dangerouslySetInnerHTML={{
-            __html: marked(post.res.data.post.content),
+            __html: marked(post.res.data.publication.post.content.html),
           }}
         ></div>
       </div>
@@ -32,24 +32,35 @@ export default function Post(post) {
 }
 
 export async function getStaticPaths() {
-  const response = await fetch("https://api.hashnode.com/", {
+  const response = await fetch("https://gql.hashnode.com/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
 
     body: JSON.stringify({
-      query:
-        'query {user(username: "prajwalg") {publication {posts(page: 0) {slug}}}}',
+      query: `query Publication {
+  publication(host: "prajwalg.hashnode.dev") {
+    isTeam
+    title
+    posts(first: 50) {
+      edges {
+        node {
+          slug
+        }
+      }
+    }
+  }
+}`,
     }),
   });
 
   const datas = await response.json();
 
-  const paths = datas.data.user.publication.posts.map((post) => {
+  const paths = datas.data.publication.posts.edges.map((post) => {
     return {
       params: {
-        postId: `${post.slug}`,
+        postId: `${post.node.slug}`,
       },
     };
   });
@@ -62,18 +73,31 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { params } = context;
-  let a = params.postId;
+  let slug = params.postId;
 
-  const response = await fetch("https://api.hashnode.com/", {
+  const response = await fetch("https://gql.hashnode.com/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
 
     body: JSON.stringify({
-      query: `{post(slug: ${JSON.stringify(
-        a
-      )}, hostname:"prajwalg.hashnode.dev"){title content coverImage}}`,
+      query: `query Publication {
+      publication(
+        host: "prajwalg.hashnode.dev",
+      ) {
+        post(slug: ${JSON.stringify(slug)}) {
+          title
+          content{
+            html
+          }
+          coverImage{
+            url
+          }
+          
+        }
+      } 
+    }`,
     }),
   });
 

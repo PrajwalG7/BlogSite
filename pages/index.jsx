@@ -10,7 +10,7 @@ export default function Home({ res }) {
 }
 
 export async function getStaticProps() {
-  const data = await fetch("https://api.hashnode.com/", {
+  const data = await fetch("https://gql.hashnode.com/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -18,7 +18,7 @@ export async function getStaticProps() {
 
     body: JSON.stringify({
       query:
-        'query {user(username: "prajwalg") {publication {posts(page: 0) {title brief slug coverImage dateAdded _id}}}}',
+        'query Publication { publication(host: "prajwalg.hashnode.dev") { isTeam title posts(first: 50) { edges { node { title brief slug coverImage { url } publishedAt id } } } } }',
     }),
   });
 

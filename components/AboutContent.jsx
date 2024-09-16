@@ -11,10 +11,7 @@ export default function AboutContent() {
         <div className="">
           <h2 className="font-semibold sm:mt-6 lg:mt-0  text-lg ">About Me</h2>
           <div className="mt-4  ">
-            Myself Prajwal Gaikwad, I am a CS and Engineering Student, Tech
-            Blogger and a Full Stack Developer from India. Jumping straight to
-            the point, from databases to graphic design and UI/UX management, I
-            can get your work done.
+          Hi there! I'm Prajwal Gaikwad, a Software Engineer with over 2 years of experience in the tech industry, specializing in building full-stack web applications.
           </div>
         </div>
 
@@ -82,7 +79,7 @@ export default function AboutContent() {
             </div>
             <div className="pb-2">
               <a
-                href="https://www.linkedin.com/in/prajwal-gaikwad-a522791a1/"
+                href="https://www.linkedin.com/in/prajwalgaikwad/"
                 target="_blank"
                 className="hover:text-blue-800 hover:font-medium"
               >
@@ -99,7 +96,7 @@ export default function AboutContent() {
             </div>
             <div className="pb-2">
               <a
-                href=" https://www.instagram.com/1prajwalgaikwad/"
+                href=" https://www.instagram.com/ig.praj/"
                 target="_blank"
                 className="hover:text-blue-800 hover:font-medium"
                 rel="noopener noreferrer"

@@ -15,10 +15,10 @@ export default function BlogPost(posts) {
     <>
       <div className="flex md:flex-row  sm:flex-col   md:gap-2 ml-2 mr-2  flex-wrap pb-10  ">
         {/* card*/}
-        {blogs.map((blogs) => {
+        {blogs.edges.map((blogs) => {
           return (
             <div
-              key={blogs._id}
+              key={blogs.node.id}
               className="container  max-w-md  rounded   border-slate-600 flex justify-start bg-gray-50 mt-8   border-4    ml-auto mr-auto "
             >
               <div className="flex flex-col flex-grow border border-slate-100  ">
@@ -26,7 +26,7 @@ export default function BlogPost(posts) {
                 <div className="cursor-pointer ">
                   <div>
                     <img
-                      src={blogs.coverImage}
+                      src={blogs.node.coverImage.url}
                       alt="profile-image"
                       width="500"
                       className=" h-64"
@@ -42,27 +42,27 @@ export default function BlogPost(posts) {
                       </h2>
                       <h2 className="underline inline-block md:ml-1">
                         {" "}
-                        {blogs.title}
+                        {blogs.node.title}
                       </h2>
                     </div>
                     <h2 className="text-gray-500">
-                      {getDateAdded(blogs.dateAdded)}
+                      {getDateAdded(blogs.node.publishedAt)}
                     </h2>
                   </div>
                 </div>
                 {/* <!--brief --> */}
                 <div className="text-gray-500 ml-2  cursor-pointer  mr-2  ">
                   <a
-                    href={`https://prajwalg.hashnode.dev/${blogs.slug}`}
+                    href={`https://prajwalg.hashnode.dev/${blogs.node.slug}`}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {blogs.brief} <br />
+                    {blogs.node.brief} <br />
                     <h2 className="hover:text-blue-800 inline-block text-gray-800  font-medium  after:content-['_↗']">
                       Read it on Hashnode
                     </h2>
                   </a>
-                  <Link href={`/posts/${blogs.slug}`} passHref>
+                  <Link href={`/posts/${blogs.node.slug}`} passHref>
                     <h2 className="text-gray-800 hover:text-blue-800   cursor-pointer  font-medium  after:content-['_↗']">
                       Read it on BlogSite
                     </h2>
